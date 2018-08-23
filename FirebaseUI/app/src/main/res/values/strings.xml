@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">FirebaseUI</string>
+    <string name="Draw_Open">Open</string>>
+    <string name="Draw_Closed">Closed</string>>
+</resources>

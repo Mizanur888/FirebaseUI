@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/addItem"
+        android:title="Add"
+        android:icon="@drawable/ic_add_black_24dp"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/ShowData"
+        android:title="Show List"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/delete_item"
+        android:title="Delete Data"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/update_item"
+        android:title="update Data"
+        app:showAsAction="never"/>
+</menu>
