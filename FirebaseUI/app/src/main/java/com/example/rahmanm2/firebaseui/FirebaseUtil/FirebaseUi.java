@@ -39,7 +39,7 @@ public class FirebaseUi {
     public static FirebaseAuth mFirebaseAuth;
     public static FirebaseAuth.AuthStateListener mAuthListener;
     private static Activity caller;
-    private static  ViewListActivity call;
+    private static ViewListActivity call;
     //fire base storoge connection
     public static FirebaseStorage mFirebaseStorage;
     public static StorageReference mStorageReference;
@@ -58,6 +58,9 @@ public class FirebaseUi {
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     if(firebaseAuth.getCurrentUser()==null) {
                         FirebaseUi.SignIn();
+                    }else{
+                        String userId = firebaseAuth.getUid();
+                        checkAdmain(userId);
                     }
                     Toast.makeText(caller.getBaseContext(),"Welcome Back",Toast.LENGTH_LONG).show();
                 }
@@ -91,7 +94,7 @@ public class FirebaseUi {
            @Override
            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
                 FirebaseUi.IsAdmain = true;
-              // call.showMenu();
+               call.showMenu();
                Log.d("Admain","You are in administrator");
            }
 

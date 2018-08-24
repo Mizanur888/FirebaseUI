@@ -117,6 +117,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu,menu);
+        MenuItem deleteMenu = menu.findItem(R.id.delete_item);
+        MenuItem updateItem = menu.findItem(R.id.update_item);
+        if(FirebaseUi.IsAdmain == true){
+            deleteMenu.setVisible(true);
+            updateItem.setVisible(true);
+            EnableEditText(true);
+        }else{
+            deleteMenu.setVisible(false);
+            updateItem.setVisible(false);
+            EnableEditText(false);
+        }
         return true;
     }
 

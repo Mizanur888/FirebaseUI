@@ -73,6 +73,12 @@ public class ViewListActivity extends AppCompatActivity {
         inflater.inflate(R.menu.list_menu,menu);
 
         MenuItem insertMenu = menu.findItem(R.id.addItem);
+        if(FirebaseUi.IsAdmain == true){
+            insertMenu.setVisible(true);
+        }
+        else{
+            insertMenu.setVisible(false);
+        }
         return true;
     }
 
@@ -105,4 +111,7 @@ public class ViewListActivity extends AppCompatActivity {
         }
     }
 
+    public void showMenu(){
+        invalidateOptionsMenu();
+    }
 }
